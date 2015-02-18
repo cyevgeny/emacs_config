@@ -41,6 +41,8 @@
 (global-set-key (kbd "M-c") 'newline)
 (global-set-key (kbd "C-o") 'forward-paragraph)
 (global-set-key (kbd "C-u") 'backward-paragraph)
+(global-set-key (kbd "M-g") 'beginning-of-visual-line)
+(global-set-key (kbd "M-h") 'end-of-visual-line);
 ;;(global-set-key (kbd "M-h") 'end-of-visual-line)
 ;;(global-set-key (kbd "C-h") 'beginning-of-visual-line)
 
@@ -75,8 +77,8 @@
 (global-set-key (kbd "<f2>") 'save-buffer)
 
 ;;for scrolling
-(setq scroll-conservatively 50)
-(setq scroll-margin 4)
+;;(setq scroll-conservatively 50)
+;;(setq scroll-margin 4)
                              
 ;;disable toolbar and menu
 (menu-bar-mode -1)
@@ -122,11 +124,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t ( :slant normal :weight normal :height 130 :width normal :foundry "outline" :family "Courier New")))))
-
-;;colorscheme
-;;(load-theme 'ramangalahy t t)
-;;(enable-theme 'ramangalahy)
-
 
 ;; Options -> Set default font
 (add-to-list 'default-frame-alist '(font . "Consolas-12"))
