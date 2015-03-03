@@ -39,19 +39,39 @@
 (global-set-key (kbd "M-2") 'split-window-right)
 (global-set-key (kbd "<backspace>") 'ignore)
 (global-set-key (kbd "M-c") 'newline)
-(global-set-key (kbd "C-o") 'forward-paragraph)
-(global-set-key (kbd "C-u") 'backward-paragraph)
 (global-set-key (kbd "M-g") 'beginning-of-visual-line)
-(global-set-key (kbd "M-h") 'end-of-visual-line);
-;;(global-set-key (kbd "M-h") 'end-of-visual-line)
-;;(global-set-key (kbd "C-h") 'beginning-of-visual-line)
+(global-set-key (kbd "M-h") 'end-of-visual-line)
+
+(require 'zen-funcs)
+
+(global-set-key (kbd "C-c p") 'zen-mark-paragraph)
+
+(global-set-key (kbd "C-o") 'zen-forward-paragraph)
+(global-set-key (kbd "C-u") 'zen-backward-paragraph)
 
 ;;set language toggle to M-Shift-j keys
-(require 'zen-funcs)
 (global-set-key (kbd "M-J")  'change-lang)
 
 ;;select text in brackets
 (global-set-key (kbd "M-F") 'select-in-parents) 
+
+;;wrap img filename in <img> tag
+(global-set-key (kbd "<f5>") 'wrap-img-tag)
+
+;;insert template from file
+(global-set-key (kbd "<f3>") 'insert-template-file)
+
+;;insert <article> ... </article> tags
+(global-set-key (kbd "<f6>") 'insert-article)
+
+;;insert <p> ... </p> tags
+(global-set-key (kbd "<f7>") 'insert-p)
+
+;;insert <div> ... </div> tags
+(global-set-key (kbd "<f8>") 'insert-div)
+
+(require 'another-mode)
+(global-set-key (kbd "M-4") 'xhm-lines-to-html-list)
 
 ;;(global-set-key (kbd "<return>") 'ignore)
 ;;autocomplete
