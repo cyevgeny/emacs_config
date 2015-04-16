@@ -42,12 +42,22 @@
 (global-set-key (kbd "M-g") 'beginning-of-visual-line)
 (global-set-key (kbd "M-h") 'end-of-visual-line)
 
+;; One func that I often use from html-mode
+(global-set-key (kbd "M-3") 'html-href-anchor)
+
+(require 'monokai-theme);
+(setq monokai-theme-is-global t)
+
 (require 'zen-funcs)
 
-(global-set-key (kbd "C-c p") 'zen-mark-paragraph)
+;; insert current date
+(global-set-key (kbd "M-b") 'insert-date)
 
+(global-set-key (kbd "C-c p") 'zen-mark-paragraph)
 (global-set-key (kbd "C-o") 'zen-forward-paragraph)
 (global-set-key (kbd "C-u") 'zen-backward-paragraph)
+
+(global-set-key (kbd "M-D") 'zen-copy-line)
 
 ;;set language toggle to M-Shift-j keys
 (global-set-key (kbd "M-J")  'change-lang)
@@ -59,16 +69,18 @@
 (global-set-key (kbd "<f5>") 'wrap-img-tag)
 
 ;;insert template from file
-(global-set-key (kbd "<f3>") 'insert-template-file)
+(global-set-key (kbd "<f3>") 'zen-find-file-insert)
 
 ;;insert <article> ... </article> tags
-(global-set-key (kbd "<f6>") 'insert-article)
+(global-set-key (kbd "<f6>") 'zen-insert-tag)
 
-;;insert <p> ... </p> tags
-(global-set-key (kbd "<f7>") 'insert-p)
 
-;;insert <div> ... </div> tags
-(global-set-key (kbd "<f8>") 'insert-div)
+;;Update title and h1 on the html page
+(global-set-key (kbd "C-c t") 'xhm-update-title)
+
+;;set width of offset for JavaScript code
+(setq js-indent-level 2)
+
 
 (require 'another-mode)
 (global-set-key (kbd "M-4") 'xhm-lines-to-html-list)
@@ -137,13 +149,21 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(custom-enabled-themes nil)
+ '(custom-safe-themes
+   (quote
+    ("a1493957ee779057acdc4c337133f217dd7b2edfdeeffed903ba2f16246f665a" default)))
  '(inhibit-startup-screen t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t ( :slant normal :weight normal :height 130 :width normal :foundry "outline" :family "Courier New")))))
+ '(default ((t (:slant normal :weight normal :height 130 :width normal :foundry "outline" :family "Courier New")))))
 
 ;; Options -> Set default font
 (add-to-list 'default-frame-alist '(font . "Consolas-12"))
